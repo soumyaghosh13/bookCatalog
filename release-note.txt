@@ -1,0 +1,2 @@
+Program works only for correct inputs. 
+Input validations is not done.

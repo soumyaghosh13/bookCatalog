@@ -1,0 +1,1 @@
+{"000725823x":{"isbn":"000725823x","price":"250","author":"Rk narayan","title":"painter of signs","publisher":"malgudi","tags":["love story"]},"0007258919":{"isbn":"0007258919","price":"400","author":"balaguru swamy","title":"C","publisher":"sumukha","tags":[""]}}

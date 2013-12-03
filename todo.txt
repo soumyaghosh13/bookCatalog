@@ -1,0 +1,106 @@
+sample data
+"isbn:000725823x;price:250;author:Rk narayan;title:painter of signs;publisher:malgudi"
+"isbn:0007258919;price:400;author:balaguru swamy;title:C;publisher:sumukha"
+"isbn:000725891x;price:300;author:yashwanth kanetkar;title:Let us C;publisher:pearson"
+"isbn:0007258917;price:245;author:Jhumpa Lahiri;title:The Namesake;publisher:Harper Collins India"
+------------------------------------------------------------------------------------------------
+Write a command line tool to manage a bookcatalog.
+						(bookcatalog 1.0) [done]
+bookcatalog add "isbn:0007258917;price:245;author:Jhumpa Lahiri;title:The Namesake;publisher:Harper Collins India" 
+    will add the book to the inventory.
+
+
+bookcatalog remove -isbn "0007258917" will remove the book by isbn.
+
+
+bookcatalog list
+
+will list all books with Author,Title,Publication,ISBN & Price
+and display the results as:-
+
+ISBN Price Author Title Publisher
+8172234988 200 Paulo Coelho The Alchemist Harper Collins Publishers
+000729980X 144 Agatha Christie The Clocks Harper Collins UK
+
+			(bookcatalog 1.1)
+ISBN is the unique identifier for the books. Ensure that at no time, there are two books by the same ISBN.
+Also ensure that the program does not crash without telling the user what the right usage is or what the mistake was.
+
+			(bookcatalog 1.2) 
+will search Paulo under Author,Title,Publication,ISBN & Price
+and display the results as:-
+ISBN Price Author Title Publisher
+8172234988 200 Paulo Coelho The Alchemist Harper Collins Publishers			
+
+		(bookcatalog 1.3)
+		bookcatalog search -author "Paulo"
+will search Paulo under Author
+and display the results as:-
+ISBN Price Author Title Publisher
+8172234988 200 Paulo Coelho The Alchemist Harper Collins Publishers
+
+bookcatalog search -title "Alchemist"
+will search Alchemist under Title
+and display the results as:-
+ISBN Price Author Title Publisher
+8172234988 200 Paulo Coelho The Alchemist Harper Collins Publishers
+
+bookcatalog search -publisher "Harper Collins"
+will search Harper Collins under publisher
+and display the results as:-
+ISBN Price Author Title Publisher
+8172234988 200 Paulo Coelho The Alchemist Harper Collins Publishers
+000729980X 144 Agatha Christie The Clocks Harper Collins UK
+
+bookcatalog search -isbn "0571283071"
+will search 0571283071 under isbn
+and display the results as:-
+ISBN Price Author Title Publisher
+0571283071 374 Jeet Thayil Narcopolis Faber & Faber
+
+
+							1.4
+
+All existing functionality should continue to work.
+
+
+On Sat, Sep 14, 2013 at 10:30 AM, Mritunjay Dubey <mritunjd@thoughtworks.com> wrote:
+swamiji
+ when we will implement search of 1.3, should we remove the search facility of 1.2. There should be no option like search "paulo" or that should also included.
+
+
+
+On Sat, Sep 14, 2013 at 10:18 AM, Vivek Haridas <vharidas@thoughtworks.com> wrote:
+Add an update option for the bookcatalog to update book attributes in the catalog after looking it up by the isbn number provided
+ 
+bookcatalog update "isbn:0007258917;price:265;author:Jhumpa Lahiri;title:The Namesake;publisher:Harper Collins India"
+will update the price of the book to 265
+  
+bookcatalog update "isbn:0007258917;price:275;publisher:Harper Collins"
+will update the price of the book to 275 and publisher to Harper Collins
+
+
+					1.5
+
+Tagging is a concept that helps in classifying any item under multiple categories. 
+For example, a book can be tagged as Indian, Sports, Cricket or as Comic or as Humour etc.
+ 
+Implement tagging for the books in the bookcatalog.
+You should be able to: 
+
+Add tags to the books 
+bookcatalog tags add "isbn:140870420X;tags:novel,tragedy" 
+It should not throw any error if a tag is already present
+
+Search books by tags  
+bookcatalog search -tag "tragedy" 
+bookcatalog search "tragedy"
+
+Remove tags from a book. 
+bookcatalog tags remove "isbn:140870420X;tags:tragedy,comic"
+It should not throw any error if a tags are not present
+ 
+Also, the bookcatalog list and bookcatalog search commands should henceforth display the tags of books along.
+
+--->list tags
+
